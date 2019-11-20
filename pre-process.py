@@ -1,4 +1,10 @@
 import pandas as pd
+import numpy as np
+import nltk
+from nltk.corpus import stopwords 
+from nltk.tokenize import word_tokenize 
+
+stop_words = set(stopwords.words('english'))
 
 df_train = pd.read_csv("./data/train.csv")
 df_train = df_train.drop(df_train.ix[:,'Unnamed: 6':'Unnamed: 8'].head(0).columns, axis=1)
